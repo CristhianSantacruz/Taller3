@@ -3,3 +3,5 @@ IngenieriaSoftwareI-ING202-Activo
 Quimica-QUI303-Inactivo
 DesarrolloWeb-DAWM101-Activo
 Programacion-PRO505-Activo
+Lenguajes-LEN101-Inactivo
+Organizaciones-ORG101-Activo

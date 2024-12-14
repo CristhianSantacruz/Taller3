@@ -3,7 +3,7 @@
 
 #include <string.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 // Estructuras para almacenar los datos
 typedef struct {
     char nombre[100];
@@ -39,9 +39,21 @@ typedef struct {
     char matriculasEstudiantes[30][10]; // Matrículas de estudiantes
 } Curso;
 
-// Funciones para leer archivos
+//Nos servira para cargar los datos y manejarlos de mejor manera
 void leerMaterias(Materia *materias, int *numMaterias);
 void leerEstudiantes(Estudiante *estudiantes, int *numEstudiantes);
 void leerCursos(Curso *cursos, int *numCursos);
 void leerProfesores(Profesor *profesor, int *numProfesor);
+
+
+// guardar los nuevos datos
+void guardarMateria(Materia *materias, int numMaterias);
+
+// estos nos permitiran manera la logica de materias
+void agregarMateria(Materia *materias, int *numMaterias);
+void editarMateria(Materia *materias, int numMaterias, Curso *cursos, int numCursos);
+bool tieneCursosActivos(const char *codigoMateria, Curso *cursos, int numCursos);
+
+
+
 #endif // SISTEMA_H

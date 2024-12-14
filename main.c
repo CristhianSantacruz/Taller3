@@ -67,6 +67,7 @@ int main()
         printf("\n\n");
     }
     // Pruebas
+    printf("******** FINALIZACION DE CARGA DE DATOS ********\n");
 
     printf("******** BIENVENIDO ********\n");
 
@@ -74,12 +75,29 @@ int main()
     do
     {
         mostrarMenu();
+        printf("Ingrese la opcion que desee: ");
         scanf(" %c", &opcion);
 
         switch (opcion)
         {
         case 'a':
-            // Crear/editar materia
+            printf("1. Agregar Materia\n");
+            printf("2. Editar Materia\n");
+            printf("Ingrese la opcion que desee: ");
+            int subopcion;
+            scanf("%d", &subopcion);
+            if (subopcion == 1)
+            {
+                agregarMateria(materias, &numMaterias);
+            }
+            else if (subopcion == 2)
+            {
+                editarMateria(materias, numMaterias, cursos, numCursos);
+            }
+            else
+            {
+                printf("Opción inválida.\n");
+            }
             break;
         case 'b':
             // Crear/editar estudiante
@@ -94,7 +112,7 @@ int main()
             printf("Programa finalizado.\n");
             break;
         default:
-            printf("Opción inválida.\n");
+            printf("Opcion invalida.\n");
             break;
         }
     } while (opcion != 'e');
