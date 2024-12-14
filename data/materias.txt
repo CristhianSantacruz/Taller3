@@ -1,0 +1,5 @@
+Estadistica-EST101-Activo
+IngenieriaSoftwareI-ING202-Activo
+Quimica-QUI303-Inactivo
+DesarrolloWeb-DAWM101-Activo
+Programacion-PRO505-Activo
