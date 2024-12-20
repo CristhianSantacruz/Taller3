@@ -52,8 +52,9 @@ void guardarMateria(Materia *materias, int numMaterias);
 // estos nos permitiran manera la logica de materias
 void agregarMateria(Materia *materias, int *numMaterias);
 void editarMateria(Materia *materias, int numMaterias, Curso *cursos, int numCursos);
-bool tieneCursosActivos(const char *codigoMateria, Curso *cursos, int numCursos);
-
-
-
+bool tieneCursosActivosMateria(const char *codigoMateria, Curso *cursos, int numCursos);
+void editarEstudiante(Estudiante *estudiantes, int numEstudiantes, Curso *cursos, int numCursos);
+bool tieneCursosActivosEstudiante(const char *matricula, Curso *cursos, int numCursos);
+void agregarEstudiante(Estudiante *estudiantes, int *numEstudiantes);
+void guardarEstudiantes(Estudiante *estudiantes, int numEstudiantes);
 #endif // SISTEMA_H

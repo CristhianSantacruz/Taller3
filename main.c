@@ -100,7 +100,22 @@ int main()
             }
             break;
         case 'b':
-            // Crear/editar estudiante
+            printf("1. Agregar Estudiante\n");
+            printf("2. Editar Estudiante\n");
+            printf("Ingrese la opción que desee: ");
+            scanf("%d", &subopcion);
+            if (subopcion == 1)
+            {
+                agregarEstudiante(estudiantes, &numEstudiantes);
+            }
+            else if (subopcion == 2)
+            {
+                editarEstudiante(estudiantes, numEstudiantes, cursos, numCursos);
+            }
+            else
+            {
+                printf("Opción inválida.\n");
+            }
             break;
         case 'c':
             // Crear/editar profesor
