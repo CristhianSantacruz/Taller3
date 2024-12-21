@@ -440,7 +440,13 @@ void editarProfesor(Profesor *profesores, int numProfesores, Curso *cursos, int 
 
             if (opcionClave == 'S' || opcionClave == 's') {
                 printf("Ingrese la nueva clave del profesor: ");
-                scanf(" %s", profesores[i].clave);
+                char nuevaClave[50];
+                scanf(" %s", nuevaClave);
+
+                // Limpiar el campo clave y asignar la nueva clave
+                memset(profesores[i].clave, '\0', sizeof(profesores[i].clave));
+                strncpy(profesores[i].clave, nuevaClave, sizeof(profesores[i].clave) - 1);
+
                 printf("Clave actualizada exitosamente.\n");
             }
 
@@ -456,18 +462,19 @@ void editarProfesor(Profesor *profesores, int numProfesores, Curso *cursos, int 
                 if (strcmp(nuevoEstado, "Inactivo") == 0 && tieneCursosActivosProfesor(cedula, cursos, numCursos)) {
                     printf("No se puede inactivar el profesor porque tiene cursos activos.\n");
                 } else {
-                    strcpy(profesores[i].estado, nuevoEstado);
+                    strncpy(profesores[i].estado, nuevoEstado, sizeof(profesores[i].estado) - 1);
                     printf("Estado actualizado exitosamente.\n");
                 }
             }
 
-            guardarProfesores(profesores, numProfesores);
+            guardarProfesores(profesores, numProfesores); // Guardar los cambios
             return;
         }
     }
 
     printf("Profesor con cédula %s no encontrado.\n", cedula);
 }
+
 
 // Verificar si un profesor tiene cursos activos
 bool tieneCursosActivosProfesor(const char *cedula, Curso *cursos, int numCursos) {
