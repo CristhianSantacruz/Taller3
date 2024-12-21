@@ -18,14 +18,14 @@ int main()
 
     // Prueba de datos
 
-    // Mostrar las materias leídas
+    // Mostrar las materias leidas
     printf("Materias leidas:\n");
     for (int i = 0; i < numMaterias; i++)
     {
         printf("Materia: %s, Codigo: %s, Estado: %s\n", materias[i].nombre, materias[i].codigo, materias[i].estado);
     }
 
-    // Mostrar los estudiantes leídos
+    // Mostrar los estudiantes leidos
     printf("\nEstudiantes leidos:\n");
     for (int i = 0; i < numEstudiantes; i++)
     {
@@ -41,12 +41,12 @@ int main()
                cursos[i].codigoCurso, cursos[i].codigoMateria, cursos[i].ccProfesor,
                cursos[i].fechaInicio, cursos[i].fechaFin);
 
-        // Mostrar las matrículas de los estudiantes
+        // Mostrar las matriculas de los estudiantes
         printf("Matriculas de estudiantes: ");
         for (int j = 0; j < 30; j++)
-        { // Limitar a 30 matrículas
+        { // Limitar a 30 matriculas
             if (cursos[i].matriculasEstudiantes[j][0] != '\0')
-            { // Verifica si la matrícula no está vacía
+            { // Verifica si la matricula no esta vacia
                 printf("%s ", cursos[i].matriculasEstudiantes[j]);
             }
         }
@@ -96,13 +96,13 @@ int main()
             }
             else
             {
-                printf("Opción inválida.\n");
+                printf("Opcion invalida.\n");
             }
             break;
         case 'b':
             printf("1. Agregar Estudiante\n");
             printf("2. Editar Estudiante\n");
-            printf("Ingrese la opción que desee: ");
+            printf("Ingrese la opcion que desee: ");
             scanf("%d", &subopcion);
             if (subopcion == 1)
             {
@@ -114,15 +114,35 @@ int main()
             }
             else
             {
+                printf("Opcion invalida.\n");
+            }
+            break;
+        case 'c': {
+            int subopcion;
+            printf("1. Agregar Profesor\n2. Editar Profesor\nIngrese la opción: ");
+            scanf("%d", &subopcion);
+            if (subopcion == 1) {
+                agregarProfesor(profesores, &numProfesores);
+            } else if (subopcion == 2) {
+                editarProfesor(profesores, numProfesores, cursos, numCursos);
+            } else {
                 printf("Opción inválida.\n");
             }
             break;
-        case 'c':
-            // Crear/editar profesor
+        }
+        case 'd': {
+            int subopcion;
+            printf("1. Agregar Curso\n2. Editar Curso\nIngrese la opción: ");
+            scanf("%d", &subopcion);
+            if (subopcion == 1) {
+                agregarCurso(cursos, &numCursos, materias, numMaterias, profesores, numProfesores, estudiantes, numEstudiantes);
+            } else if (subopcion == 2) {
+                editarCurso(cursos, numCursos);
+            } else {
+                printf("Opción inválida.\n");
+            }
             break;
-        case 'd':
-            // Crear/editar curso
-            break;
+        }
         case 'e':
             printf("Programa finalizado.\n");
             break;

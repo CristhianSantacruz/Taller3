@@ -57,4 +57,13 @@ void editarEstudiante(Estudiante *estudiantes, int numEstudiantes, Curso *cursos
 bool tieneCursosActivosEstudiante(const char *matricula, Curso *cursos, int numCursos);
 void agregarEstudiante(Estudiante *estudiantes, int *numEstudiantes);
 void guardarEstudiantes(Estudiante *estudiantes, int numEstudiantes);
+
+void guardarProfesores(Profesor *profesores, int numProfesores);
+void agregarProfesor(Profesor *profesores, int *numProfesores);
+void editarProfesor(Profesor *profesores, int numProfesores, Curso *cursos, int numCursos);
+bool tieneCursosActivosProfesor(const char *cedula, Curso *cursos, int numCursos);
+void agregarCurso(Curso *cursos, int *numCursos, Materia *materias, int numMaterias, Profesor *profesores, int numProfesores, Estudiante *estudiantes, int numEstudiantes);
+void editarCurso(Curso *cursos, int numCursos);
+void guardarCursos(Curso *cursos, int numCursos);
+
 #endif // SISTEMA_H
